@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = @"~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Login";
+}
+
+@section css{
+    
+}
+
+@section js{ 
+    
+}
+
+<div class="d-flex flex-column">
+    <h1 class="p-md-5">Autenticação</h1>
+    <form class="container">
+        <label>Login:</label><br />
+        <input type="email" id="emailLog" class="col-md-4 form-control"/>
+        <br/>
+        <label>Senha:</label>
+        <input type="password" id="senhalog" class="col-md-4 form-control"/>
+        <br />
+        <div class="text-left">
+            <input type="button" class="btn btn-outline-primary" value="Entrar" />
+        </div>
+    </form>
+</div>
+
+

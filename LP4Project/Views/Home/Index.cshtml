@@ -1,0 +1,24 @@
+﻿@{
+    Layout=@"~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Produtos </h1>
+    <div class="container">
+        <div class="row">
+            @foreach (Produto p in ViewBag.Produtos)
+            {
+                <div class="row px-2 card" style="width: 18rem;">
+                    <h5 class="card-title">@p.NomeProduto</h5>
+                    <img class="card-img-top" src="~/Images/sonic_the_hedgehog_good_smile_1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">@p.DescricaoProduto</p>
+                        <h6>$@p.PrecoProduto</h6>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
