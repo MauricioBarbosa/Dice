@@ -1,0 +1,53 @@
+﻿@{
+    Layout = @"~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{ 
+    <link href="~/views/CadastrarProduto/index.css" rel="stylesheet" />
+}
+
+@section js{ 
+    <script src="~/views/CadastrarProduto/index.js"></script>
+}
+
+    <div class="container">
+        <br />
+        <h1>Cadastro de Produtos</h1>
+        <form>
+            <div class="form-group">
+                <label>Nome do Produto: </label><br>
+                <input type="text" class="form-control" placeholder="nome do produto" id="nomeProduto"/>
+                <div id="divProduto"></div>
+            </div>
+            <div class="form-row">
+                <div class="col-6">
+                    <label>Fabricante: </label>
+                    <input type="text" class="form-control" placeholder="ex: hasbro" id="fabricanteProduto" />
+                    <div id="divFabricante"></div>
+                </div>
+                <div class="col-3">
+                    <label>Categoria :</label>
+                    <select id="categoriaProduto" class="form-control" >
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label>Preço:</label>
+                    <input type="text" class="form-control" placeholder="ex: $14.99" id="precoProduto" />
+                    <div id="divPreco"></div>
+                </div>
+            </div>
+            <label>Descrição Geral:</label>
+            <textarea placeholder="ex: qual país de origem" class="form-control" id="descricaoProduto">
+   			</textarea>
+            <br>
+            <div class="form-row">
+                <label>Foto : </label><br />
+                <input type="file" id="imgProduto" class="form-control" />
+            </div>
+            <br />
+            <div class="form-row">
+                <input type="button" class="btn btn-outline-success" value="Cadastrar" onclick="cadastrar.btnCadastrarOnClick()"/>
+            </div>
+            <div id="divMsg"></div>
+        </form>
+    </div>
