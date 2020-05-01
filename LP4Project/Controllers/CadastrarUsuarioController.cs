@@ -61,11 +61,32 @@ namespace LP4Project.Controllers
 
         public IActionResult Pesquisar(string nome)
         {
-            // Chamar neg. 
-            // chamar bd 
+            CamadaNegocio.UsuarioCamadaNegocio ucn = new CamadaNegocio.UsuarioCamadaNegocio();
+            List<Models.Usuario> usuarios = ucn.Pesquisar(nome);
 
+            var usuariosLimpos = new List<object>(); 
 
-            return null;
+            foreach(var u in usuarios)
+            {
+                var usuarioLimpo = new
+                {
+                    id = u.Id,
+                    nome = u.Nome
+                };
+                usuariosLimpos.Add(usuarioLimpo);
+            }
+            return Json(usuariosLimpos);
+        }
+
+        [HttpDelete]
+        public IActionResult Excluir(int id)
+        {
+            CamadaNegocio.UsuarioCamadaNegocio ucn = new CamadaNegocio.UsuarioCamadaNegocio();
+            bool operacao = ucn.excluir(id);
+            return Json(new
+            {
+                operacao
+            });
         }
     }
 }

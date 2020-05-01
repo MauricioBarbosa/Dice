@@ -72,7 +72,7 @@ namespace LP4Project.CamadaAcessoDados
                     _cmd.Parameters.AddWithValue(p.Key, p.Value);
                 }
             }
-
+            
             int linhasAfetadas = _cmd.ExecuteNonQuery();
             _ultimoId = (int)_cmd.LastInsertedId;
 

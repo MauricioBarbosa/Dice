@@ -7,35 +7,49 @@ namespace LP4Project.Models
 {
     public class Produto
     {
-        private int idProduto;
-        private string nomeProduto;
-        private double precoProduto;
-        private string descricaoProduto;
-        private string fabricanteProduto;
-        private string categoriaProduto;
+        int _id;
+        string _nomeProduto;
+        double _precoProduto;
+        string _descricaoProduto;
+        string _fabricanteProduto;
+        string _categoriaProduto;
+        byte[] _imagemProduto;
+
+        public Produto() { }
+
+        public Produto(int id, string nomeProduto, double precoProduto, string descricaoProduto)
+        {
+            Id = id;
+            NomeProduto = nomeProduto;
+            PrecoProduto = precoProduto;
+            DescricaoProduto = descricaoProduto;
+        }
+
+        public Produto(int id, string nomeProduto, double precoProduto, string descricaoProduto, string fabricanteProduto, string categoriaProduto)
+        {
+            Id = id;
+            NomeProduto = nomeProduto;
+            PrecoProduto = precoProduto;
+            DescricaoProduto = descricaoProduto;
+            FabricanteProduto = fabricanteProduto;
+            CategoriaProduto = categoriaProduto;
+        }
 
         public Produto(string nomeProduto, double precoProduto, string descricaoProduto, string fabricanteProduto, string categoriaProduto)
         {
-            this.fabricanteProduto = fabricanteProduto;
-            this.categoriaProduto = categoriaProduto;
-            this.nomeProduto = nomeProduto;
-            this.precoProduto = precoProduto;
-            this.descricaoProduto = descricaoProduto;
+            NomeProduto = nomeProduto;
+            PrecoProduto = precoProduto;
+            DescricaoProduto = descricaoProduto;
+            FabricanteProduto = fabricanteProduto;
+            CategoriaProduto = categoriaProduto;
         }
 
-        public Produto(int idProduto, string nomeProduto, double precoProduto,string descricaoProduto)
-        {
-            this.idProduto = idProduto;
-            this.nomeProduto = nomeProduto;
-            this.precoProduto = precoProduto;
-            this.DescricaoProduto = descricaoProduto;
-        }
-
-        public double PrecoProduto { get => precoProduto; set => precoProduto = value; }
-        public string NomeProduto { get => nomeProduto; set => nomeProduto = value; }
-        public int IdProduto { get => idProduto; set => idProduto = value; }
-        public string DescricaoProduto { get => descricaoProduto; set => descricaoProduto = value; }
-        public string FabricanteProduto { get => fabricanteProduto; set => fabricanteProduto = value; }
-        public string CategoriaProduto { get => categoriaProduto; set => categoriaProduto = value; }
+        public int Id { get => _id; set => _id = value; }
+        public string NomeProduto { get => _nomeProduto; set => _nomeProduto = value; }
+        public double PrecoProduto { get => _precoProduto; set => _precoProduto = value; }
+        public string DescricaoProduto { get => _descricaoProduto; set => _descricaoProduto = value; }
+        public string FabricanteProduto { get => _fabricanteProduto; set => _fabricanteProduto = value; }
+        public string CategoriaProduto { get => _categoriaProduto; set => _categoriaProduto = value; }
+        public byte[] ImagemProduto { get => _imagemProduto; set => _imagemProduto = value; }
     }
 }

@@ -84,26 +84,35 @@ namespace LP4Project.CamadaAcessoDados
         {
             //oo-er
             List<Models.Usuario> usuarios = new List<Models.Usuario>();
-            string select = @"select * from usuario where nome like @nome";
+            string select = @"select * from usuario where usu_nome like @nome";
 
             var parametros = _bd.GerarParametros();
             parametros.Add("@nome", "%" + nome + "%");
 
-            DataTable dt = _bd.ExecutarSelect(select);
+            DataTable dt = _bd.ExecutarSelect(select,parametros);
 
             foreach(DataRow row in dt.Rows)
             {
-                usuarios.Add(Map(dt.Rows[0]));
+                usuarios.Add(Map(row));
             }
             
             return usuarios;
         }
 
+        public bool excluir(int id)
+        {
+            string delete = @"delete from usuario where Id = "+id;
+
+            return _bd.ExecutarNonQuery(delete) > 0;
+        }
+
         internal Models.Usuario Map(DataRow row)
         {
-            Models.Usuario user = new Models.Usuario();                                         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-            //Mapear o objeto
+            Models.Usuario user = new Models.Usuario();
+            user.Nome = row["usu_nome"].ToString();
+            user.Id = Convert.ToInt32(row["Id"].ToString());
+            user.Email = row["usu_login"].ToString();
+
             return user;
         }
     }

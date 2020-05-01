@@ -55,5 +55,11 @@ namespace LP4Project.CamadaNegocio
             return ubd.Pesquisar(nome);
         }
 
+        public bool excluir(int id)
+        {
+            CamadaAcessoDados.UsuarioDB ubd = new CamadaAcessoDados.UsuarioDB();
+            return ubd.excluir(id);
+        }
+
     }
 }

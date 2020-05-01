@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using LP4Project.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -30,10 +31,11 @@ namespace LP4Project.Controllers
             {
                 Produto p = new Produto(data["nome"], Convert.ToDouble(data["preco"]), data["descricao"],
                 data["fabricante"], data["categoria"]);
-                if (data["nome"] != "" || data["nome"] != null)
+
+                if (p.NomeProduto!=""&&p.CategoriaProduto!=""&&p.FabricanteProduto!="")
                 {
-                   operacao = true;
-                    msg = "Cadastrado produto : " + data["nome"];
+                    CamadaNegocio.ProdutoCamadaNegocio camp = new CamadaNegocio.ProdutoCamadaNegocio();
+                    (operacao, msg) = camp.registrarProduto(p);
                 }
                 else
                 {

@@ -17,13 +17,11 @@
             <div class="form-group">
                 <label>Nome do Produto: </label><br>
                 <input type="text" class="form-control" placeholder="nome do produto" id="nomeProduto"/>
-                <div id="divProduto"></div>
             </div>
             <div class="form-row">
                 <div class="col-6">
                     <label>Fabricante: </label>
                     <input type="text" class="form-control" placeholder="ex: hasbro" id="fabricanteProduto" />
-                    <div id="divFabricante"></div>
                 </div>
                 <div class="col-3">
                     <label>Categoria :</label>
@@ -33,7 +31,6 @@
                 <div class="col-3">
                     <label>Preço:</label>
                     <input type="text" class="form-control" placeholder="ex: $14.99" id="precoProduto" />
-                    <div id="divPreco"></div>
                 </div>
             </div>
             <label>Descrição Geral:</label>
@@ -46,8 +43,8 @@
             </div>
             <br />
             <div class="form-row">
-                <input type="button" class="btn btn-outline-success" value="Cadastrar" onclick="cadastrar.btnCadastrarOnClick()"/>
+                <input type="button" id="imgProduto" class="btn btn-outline-success" value="Cadastrar" onclick="cadastrar.btnCadastrarOnClick()"/>
             </div>
-            <div id="divMsg"></div>
+            <div id="divMsg" class="alert-warning"></div>
         </form>
     </div>

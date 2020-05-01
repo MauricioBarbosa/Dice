@@ -20,13 +20,6 @@ namespace LP4Project.Controllers
 
         public IActionResult Index()
         {
-            Produto[] prods=new Produto[12];
-            for(int i = 0; i < 12; i++)
-            {
-                prods[i] = new Produto(i, "Produto", 12.00, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum nulla vitae bibendum ullamcorper");
-            }
-
-            ViewBag.Produtos = prods;
             return View();
         }
 
@@ -39,6 +32,25 @@ namespace LP4Project.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult obterProdutos()
+        {
+            CamadaNegocio.ProdutoCamadaNegocio pcm = new CamadaNegocio.ProdutoCamadaNegocio();
+            List<Models.Produto> ps = pcm.obterProdutos();
+
+            var produtosLimpos = new List<object>();
+
+            foreach (Models.Produto p in ps)
+            {
+                var produtolimpo = new {
+                    nome = p.NomeProduto,
+                    preco = p.PrecoProduto,
+                    descricao = p.DescricaoProduto
+                };
+                produtosLimpos.Add(produtolimpo);
+            }
+            return Json(produtosLimpos);
         }
     }
 }

@@ -15,9 +15,23 @@
         <input type="search" id="usuario" placeholder="Nome de Usuário" class="col-md-6 form-control" />
         <br />
         <div class="text-left">
-            <input type="button" class="btn btn-outline-primary" value="Pesquisar" onclick="indexListar.btnPesquisarOnClick()" />
+            <input id="btnPesquisar" type="button" class="btn btn-outline-primary" value="Pesquisar" onclick="indexListar.btnPesquisarOnClick()" />
         </div>
         <div id="divMsg"></div>
+        <br />
+        <br />
+        <table class="table" id="tbUsuarios" style="display:none">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyUsuarios">
+                <!--AJAX-->
+            </tbody>
+        </table>
     </form>
 </div>
 
