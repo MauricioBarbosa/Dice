@@ -1,0 +1,55 @@
+﻿.carrousel-button > a {
+    background-color: #bdbdbd;
+    font-size: 28px;
+    border-radius: 4px;
+    border: 1px solid #868686;
+    color: #868686;
+}
+
+.logomarcas{
+    width: 150px;
+    height: 164.31px;
+    background-color: #fff;
+    border: 2px solid #656565;
+    border-radius: 50%;
+}
+
+@media(max-width: 400px){
+    .logomarcas {
+        width: 50px;
+        height: 85.31px;
+    }
+
+    .carrousel-button > a {
+        font-size: 18px;
+    }
+}
+
+.carousel-item{
+    transition: transform .6s linear;
+}
+
+.carousel-item-next, .carousel-item-prev {
+    display: flex;
+}
+
+.carousel-item.active {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.card-img{
+    width: 75%;
+    height: 25.5vh;
+}
+
+.card{
+    color: black;
+}
+
+.card:hover {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}

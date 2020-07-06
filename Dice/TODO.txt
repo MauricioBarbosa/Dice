@@ -1,0 +1,11 @@
+﻿
+
+# APRESENTAR DIA 13/07 
+
+- Upload das Imagens (2 ou mais imagens)(x) 
+- Mostrar imagem do produto em um card (x)
+- Criar view do Produto 
+- Criar carrinho
+
+
+

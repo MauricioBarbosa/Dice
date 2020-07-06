@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/views/Login/index.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+    <script src="~/views/Login/Index.js?v=2"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body class="d-flex flex-column background-white">
+    <header class="h-70 bg-info d-flex flex-row">
+        <div class="ml-3 h1 pt-2">
+            <!--LOGO-->
+            <a href="~/home" class="d-flex flex-sm-row align-content-center f-text-decoration-none text-white">
+                <i class="fas fa-dice"></i>
+                <div class="f-quicksand-sans-serif">DICE</div>
+            </a>
+        </div>
+    </header>
+    <main class="d-flex my-5 align-items-center flex-column">
+        <h2>Login do Cliente</h2><!--Login Form-->
+        <form class="d-flex my-3 flex-column">
+            <label class="d-flex flex-column w-400 my-3">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" placeholder="Ex:joseribeiro@gmail.com" id="emailLog" />
+            </label>
+            <div class="d-flex flex-column w-400 mt-2 mb-3">
+                <div class="d-flex justify-content-between">
+                    <label for="senha">Senha no Dice:</label>
+                    <a href="#">Esqueceu?</a>
+                </div>
+                <input type="password" class="form-control" id="senhaLog" />
+            </div>
+            <div id="divMsg"></div>
+            <button type="button" class="btn btn-success my-3 p-2" onclick="index.btnLogarOnClick()"><b>Continuar</b></button>
+            <div class="align-self-center">OU</div>
+            <button class="btn btn-primary my-3 p-2"><i class="fab fa-facebook pr-2"></i><b>Login com o Facebook</b></button>
+        </form>
+    </main>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

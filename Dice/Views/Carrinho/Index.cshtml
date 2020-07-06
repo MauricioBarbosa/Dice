@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    <link href="~/views/Carrinho/index.css" rel="stylesheet" />
+}
+
+@section js{
+    <script src="~/views/Carrinho/index.js"></script>
+}
+
+<div id="main" class="py-4 px-4 mb-5 d-flex">
+    <div class="w-80">
+        <h4>Carrinho de compras</h4>
+        <div class="border-bottom text-right">
+            <small class="ml-auto mr-5"><b>preço</b></small>
+        </div>
+        <div id="#produtosCarrinho">
+        </div>
+    </div>
+    <div class="w-20 ml-4">
+        <div class="border p-2 fa-1x d-flex">
+            <i class="fas fa-info"></i>
+            <p class="f-10 ml-3 mb-0">Para ter Frete GRÁTIS, adicione <b>R$60,00</b> em produtos elegíveis. <a href="#">Veja detalhes.</a></p>
+        </div>
+        <div class="border p-2 fa-1x d-flex background-color-gray d-flex flex-column">
+            <div id="#valorTotal"></div>
+            <div class="my-2 d-flex align-items-center">
+                <input type="checkbox" class="form-check"/>
+                <small class="ml-2 mt-0">Este pedido contém um presente</small>
+            </div>
+            <div class="p-2">
+                <button class="btn btn-info w-100"><small>Finalizar Pedido</small></button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Categorias";
+    Layout = "~/Views/Shared/_LayoutModal.cshtml";
+}
+
+@section css{
+    <link href="~/views/CadastrarProduto/janelamodal.css" rel="stylesheet" />
+}
+
+<div class="d-flex flex-column w-70">
+    <form class="container-fluid mb-4">
+        <div class="form-row">
+            <input type="search" class="col-11 p-2 b-gray-2" placeholder="Digite aqui sua busca" id="#busca" onsubmit="Index.carregarFabricantes()"/>
+            <button class="b-border-right btn-info col-1" type="button" onclick="Index.carregarCategorias()"><i class="fas fa-search"></i></button>
+        </div>
+    </form>
+    <div class="px-4 d-none" id="#divTable">
+        <table class="table table-borderless container-fluid table-striped d-none overflow-auto" id="#table">
+            <thead class="thead-light" id="#thead">
+                <tr class="row">
+                    <th class="col-9">Nome</th>
+                    <th class="col-1"></th>
+                    <th class="col-1"></th>
+                    <th class="col-1"></th>
+                </tr>
+            </thead>
+            <tbody id="#resultadoPesquisa">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section js{
+    <script src="~/views/CadastrarProduto/IndexObterCategoria.js"></script>
+}

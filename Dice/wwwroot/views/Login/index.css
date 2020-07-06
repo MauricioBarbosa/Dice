@@ -1,0 +1,21 @@
+﻿.background-white{
+    background-color: #fff;
+}
+
+.w-400{
+    width: 400px;
+}
+
+@media(max-width: 450px){
+    .w-400{
+        width: auto;
+    }
+}
+
+#divMsg{
+    display: none;
+    border: 1px solid #ff006e;
+    padding: 2px;
+    color : red;
+    text-align: center;
+}

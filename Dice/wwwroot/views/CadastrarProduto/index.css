@@ -1,0 +1,32 @@
+﻿.bodyCad{
+    background-color: #fff;
+}
+
+.select-hover{
+
+}
+
+.select-hover:hover{
+    cursor:pointer;
+}
+
+.w-65{
+    width: 65%;
+}
+
+/*fancybox*/
+
+.fancybox-slide--iframe .fancybox-content {
+    width: 800px;
+    height: 600px;
+    max-width: 80%;
+    max-height: 80%;
+    margin: 0;
+}
+
+.error-box{
+    background-color: #ffc2c2; 
+    color: #980808; 
+    border: 1px solid red;
+    padding-left: 6px;
+}

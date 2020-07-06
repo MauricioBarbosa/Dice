@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 
     @RenderSection("css", false)
+    @RenderSection("js", false)
 
 </head>
 <body>
@@ -29,11 +30,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Preços</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Produtos</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="~/CadastrarProduto">Cadastrar Produto</a>
+                        <a class="dropdown-item" href="~/CadastrarProduto">Listar produto</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="~/Login">Login</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Usuários</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="~/Login">Login</a>
+                        <a class="dropdown-item" href="~/CadastrarUsuario/IndexListar">Pesquisar Usuários</a>
+                    </div>
                 </li>
             </ul>
             <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
@@ -45,7 +54,7 @@
         </div>
     </header>
 
-   @RenderBody()
+    @RenderBody()
 
     <footer class="footer bg-dark text-white">
         <div class="container py-6 px-1">
@@ -60,6 +69,5 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("js",false)
 </body>
 </html>

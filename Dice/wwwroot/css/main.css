@@ -1,0 +1,237 @@
+﻿html{
+
+}
+
+body {
+    background-color: #e8e8e8;
+    width:100%;
+    padding: 0;
+    margin:0;
+}
+
+/*Classes-Estilo*/
+
+/*Classes-Estilo/Height*/
+.h-70{
+    height: 70px;
+}
+
+/*Classes-Estilo/width*/
+.wb-100{
+    width: 200px;
+}
+
+.w-15{
+    width: 15%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-33-33{
+    width: 33.33%;
+}
+
+.w-35{
+    width: 35%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+@media(max-width:600px){
+    .wb-100{
+        width: 150px;
+    }
+}
+/*Classes-Estilo/background-color*/
+
+.background-color-gray{
+    background-color: #cbcbcb;
+}
+
+/*Classes-Estilo/border*/
+.b-bottom{
+    border-bottom: 1px solid #808080;
+}
+
+.border-gray{
+    border: 1px solid #868686;
+}
+
+.b-radius-20{
+    border-radius: 4px;
+}
+
+/*Classes-Estilo/Fonts/styles*/
+
+.f-quicksand-sans-serif {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*Classes-Estilo/Fonts/decoration*/
+
+.f-text-decoration-none{
+    text-decoration: none;
+}
+
+.f-text-decoration-none:hover {
+    text-decoration: none;
+}
+
+/*Classes-Estilo/Fonts/colors*/
+
+.f-color-gray{
+    color: #808080;
+}
+
+.f-color-gray-2{
+    color: #868686;
+}
+
+.f-color-black{
+    color: #000000;
+}
+
+.f-yellow{
+    color: #ffd800;
+}
+
+.f-color-wine{
+    color: #620707;
+}
+
+.f-color-greenblue {
+    color: #497878
+}
+
+/*Classes-Estilo/Fonts/font-size*/
+
+.f-12{
+    font-size: 12px;
+}
+
+.f-10{
+    font-size: 10px;
+}
+
+.f-15 {
+    font-size: 15px;
+}
+
+.f-20 {
+    font-size: 20px;
+}
+
+.f-25 {
+    font-size: 25px;
+}
+
+/*Classes-Estilo/Fonts/*/
+
+
+
+/*Classes-Estilo//*/
+
+/*Classes-Estilo/Images/*/
+
+.im-circle {
+    border: 1px solid #fff;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    overflow: hidden;
+}
+
+.im-gray{
+    background-color: #e8e8e8;
+}
+
+.im-profile{
+    width: 30px;
+    height: 30px;
+}
+
+/*Classes-Estilo/forms/*/
+
+/*Classes-Estilo/forms/size*/
+
+/*Classes-Estilo/forms/buttons*/
+.b-white{
+    background-color:#fff;
+}
+
+.b-white:hover{
+    background-color: #808080;
+}
+
+/*Classes-Estilo/forms/buttons/border*/
+
+.b-border-right{
+    border-top-right-radius: .30em;
+    border-bottom-right-radius: .30em;
+    border:none;
+}
+
+.b-border-left {
+    border-top-left-radius: .30em;
+    border-bottom-left-radius: .30em;
+    border: none;
+}
+
+/*Classes-Estilo/forms/buttons/border/ color*/
+.b-gray{
+    border-top: 1px solid #d0d0d0;
+}
+
+.b-gray-2 {
+    border: 1px solid #868686;
+}
+
+
+/*Classes-Estilo/forms/buttons/border/*/
+/*Classes-Estilo/forms/buttons/*/
+/*Classes-Estilo/forms/*/
+/*Classes-Estilo/*/
+/*Classes-Estilo/lists*/
+
+.list-style-none{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.a-hover {
+    color: white;
+}
+
+.a-hover:hover{
+    color: #808080;
+}
+
+.content::before{
+    content:"DICE";
+}
+/*Classes-Estilo/dropdown*/
+
+.submenu{
+    font-size: 12px;
+}
+
+.submenu-button{
+    font-size: 13px;
+}
+
+.submenu-button-symbol{
+    font-size: 25px;
+}
+
+
+/*Classes herdadas do bootstrap*/
+
+.dropdown-item:hover {
+    background-color: #fff;
+}
