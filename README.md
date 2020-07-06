@@ -13,5 +13,5 @@
 
 <ul>
   <li>Não possuo objeções caso queira copiar o código, entretanto, gostaria que adicionasse créditos, mas se não quiser, não tem problema</li>
-  <li>Você pode verificar a aplicação<a href="http://diceweb.herokuapp.com/">aqui</a></li>
+  <li>Você pode verificar a aplicação <a href="http://diceweb.herokuapp.com/">aqui</a></li>
 </ul>
