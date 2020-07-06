@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "Visualizar Produto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section js{
+    <script src="~/lib/glider/glider.js"></script>
+    <script src="~/views/Produto/index.js"></script>
+}
+
+@section css{
+    <link href="~/views/Produto/index.css" rel="stylesheet" />
+    <link href="~/lib/glider/glider.css" rel="stylesheet" />
+}
+<!--PRODUTOS DE CIMA-->
+<div id="main" class="py-4 px-4 mb-4">
+    <h3>Os clientes também viram</h3>
+    <div class="d-flex w-100 px-3 justify-content-around pb-3 mb-5 border-bottom">
+        <div class="d-flex my-4 w-25 align-items-center border-right" id="#produtosCima">
+            <a href="#" class="w-33-33">
+                <img src="~/Images/sonic_the_hedgehog_good_smile_1.jpg" class="w-100" />
+            </a>
+            <a href="#" class="ml-5 f-color-black f-text-decoration-none">
+                <div class="mb-2"><b>SONIC</b></div>
+                <div class="d-flex mb-5 f-yellow">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <b>R$ 99,99</b>
+            </a>
+        </div>
+        <div class="d-flex my-4 w-25 align-items-center border-right">
+            <a href="#" class="w-33-33">
+                <img src="~/Images/sonic_the_hedgehog_good_smile_1.jpg" class="w-100" />
+            </a>
+            <a href="#" class="ml-5 f-color-black f-text-decoration-none">
+                <div class="mb-2"><b>SONIC</b></div>
+                <div class="d-flex mb-5 f-yellow">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <b>R$ 99,99</b>
+            </a>
+        </div>
+        <div class="d-flex my-4 w-25 align-items-center border-right">
+            <a href="#" class="w-33-33">
+                <img src="~/Images/sonic_the_hedgehog_good_smile_1.jpg" class="w-100" />
+            </a>
+            <a href="#" class="ml-5 f-color-black f-text-decoration-none">
+                <div class="mb-2"><b>SONIC</b></div>
+                <div class="d-flex mb-5 f-yellow">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <b>R$ 99,99</b>
+            </a>
+        </div>
+
+    </div>
+    <!--PRODUTO-->
+    <div class="d-flex justify-content-around my-3">
+        <div class="d-flex justify-content-between w-35 carrousel-produto">
+            <div class="d-flex flex-column w-50 mr-5" id="#imgsMiniaturas">
+            </div>
+            <div class="glider-contain" style="width: 66%;">
+                <div class="glider" id="#imgsProdutos">
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column w-50" id="#informacoesProduto">
+        </div>
+    </div>
+    <div>CARROSEL ABAIXO</div>
+    <div>MAIS CARROSSEL</div>
+</div>
+

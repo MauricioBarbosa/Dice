@@ -1,0 +1,120 @@
+﻿@{
+    Layout = @"~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Home Page";
+}
+
+@section js{
+    <script src="~/views/Home/index.js"></script>
+    <script src="~/lib/glider/glider.js"></script>
+}
+
+@section css{
+    <link href="~/views/Home/index.css" rel="stylesheet" />
+    <link href="~/lib/glider/glider.css" rel="stylesheet" />
+}
+
+<div>
+    <!--Carrousel-->
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="~/Images/Banner/image_1.png" alt="First slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<!--LOGOMARCAS-->
+<div class="my-4 mx-3">
+    <div class="glider-contain">
+        <div class="glider">
+            <div class="ml-sm-0 ml-md-5">
+                <a href="#">
+                    <img src="~/Images/logomarcas/logo1.jpeg" class="logomarcas" />
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="~/Images/logomarcas/logo2.jpeg" class="logomarcas" />
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="~/Images/logomarcas/logo3.jpeg" class="logomarcas" />
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="~/Images/logomarcas/logo4.jpeg" class="logomarcas" />
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="~/Images/logomarcas/logo5.jpeg" class="logomarcas" />
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="~/Images/logomarcas/logo6.jpeg" class="logomarcas" />
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="~/Images/logomarcas/logo7.jpeg" class="logomarcas" />
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="~/Images/logomarcas/logo8.jpeg" class="logomarcas" />
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="~/Images/logomarcas/logo9.jpeg" class="logomarcas" />
+                </a>
+            </div>
+        </div>
+        <button aria-label="Previous" class="glider-prev"><i class="fas fa-caret-left"></i></button>
+        <button aria-label="Next" class="glider-next"><i class="fas fa-caret-right"></i></button>
+    </div>
+</div>
+<h3 class="ml-3">DESTAQUES</h3>
+<div class="my-4 mx-3">
+    <div class="glider-contain">
+        <div class="glider-produto" id="#produtosDestaque">
+        </div>
+        <button aria-label="Previous" class="glider-prev-produto"><i class="fas fa-caret-left"></i></button>
+        <button aria-label="Next" class="glider-next-produto"><i class="fas fa-caret-right"></i></button>
+    </div>
+</div>
+<h3 class="ml-3">Dê uma olhada nesses</h3>
+<div class="my-4 mx-3">
+    <div class="glider-contain">
+        <div class="glider" id="#outrosProdutos">
+            <!--RENDERIZAR PRODUTOS-->
+            <div class="card" style="width: 10rem;">
+                <div class="card-img">[IMAGEM]</div>
+                <div class="card-body">
+                    <div>nomeproduto</div>
+                    <div>classificação</div>
+                    <div>
+                        R$15,59 R$10,99
+                    </div>
+                    <div>
+                        divido
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button aria-label="Previous" class="glider-prev"><i class="fas fa-caret-left"></i></button>
+        <button aria-label="Next" class="glider-next"><i class="fas fa-caret-right"></i></button>
+    </div>
+</div>

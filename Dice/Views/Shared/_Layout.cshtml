@@ -1,0 +1,174 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContextaccessor
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LP4Project</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link href="~/css/main.css" rel="stylesheet" />
+
+    @RenderSection("css", false)
+
+</head>
+<body class="d-flex flex-column">
+    <header class="d-flex flex-lg-row flex-md-row flex-sm-row text-white bg-info h-70 b-bottom
+            justify-content-between justify-content-lg-between justify-content-md-between justify-content-sm-between
+            align-items-center align-items-md-center align-content-sm-center sticky-top">
+        <div class="ml-3 h1 pt-1">
+            <!--LOGO-->
+            <a href="~/home" class="d-flex flex-sm-row align-content-center f-text-decoration-none text-white">
+                <i class="fas fa-dice"></i>
+                <div class="f-quicksand-sans-serif">DICE</div>
+            </a>
+        </div>
+        <div class="w-50 d-none d-sm-block">
+            <!--PESQUISAR-->
+            <form class="container-fluid">
+                <div class="form-row">
+                    <input type="search" placeholder="O que você procura?" class="p-2 b-border-left col-10 col-sm-10" />
+                    <button class="b-border-right b-white col-2 col-sm-1"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="d-flex flex-md-row flex-sm-row pr-lg-3 pr-sm-1 align-items-center">
+            <!--PAINEL DO USUÁRIO-->
+            <a href="#" class="d-none d-sm-flex align-items-center pr-3 a-hover dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="im-circle im-gray">
+                    <img src="~/Images/user-without-pic.png" class="im-profile" />
+                </div>
+                <div class="pl-2 pr-1">@{
+                    if(httpContextaccessor.HttpContext.User.Claims.Count()>0)
+                        @Html.Raw(httpContextaccessor.HttpContext.User.Claims.ToList()[1].Value)
+                    else
+                        @Html.Raw("Entrar")
+                }</div>
+            </a>
+            <!--SUBMENU-->
+            <div class="dropdown-menu submenu">
+                <div class="d-flex flex-column align-content-center">
+                    <div class="b-bottom align-items-start">
+                        @if (httpContextaccessor.HttpContext.User.Claims.Count() > 0)
+                        {
+                            if (Convert.ToInt32(httpContextaccessor.HttpContext.User.Claims.ToList()[2].Value) < 2)
+                            {
+                                <a href="/CadastrarUsuario/IndexListar" class="btn w-100">Listar Usuário</a>
+                            }
+                            if (Convert.ToInt32(httpContextaccessor.HttpContext.User.Claims.ToList()[2].Value) < 3)
+                            {
+                                <a href="~/CadastrarProduto" class="btn w-100">Novo Produto</a>
+                            }
+                            <a href="/Login/Sair" class="btn w-100">Sair</a>
+                        }
+                        else
+                        {
+                            <div class="dropdown-item d-flex justify-content-center">
+                                <a href="~/Login" class="btn btn-primary w-100 submenu-button">Entrar</a>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div></div>
+                                <div>ou</div>
+                                <div></div>
+                            </div>
+                            <div class="dropdown-item d-flex justify-content-center">
+                                <a href="#" class="btn btn-primary px-3 d-flex justify-content-center"><i class="fab fa-facebook-square submenu-button-symbol pr-2"></i><div class="submenu-button pt-1">Login com o Facebook</div></a>
+                            </div>
+                            <div class="dropdown-item d-flex justify-content-center b-bottom">
+                                Cliente Novo?<a href="#" class="ml-1"> Cadastrar</a>
+                            </div>
+                        }
+                    </div>
+                    <div class="dropdown-item d-flex justify-content-around">
+                        <a href="#">Minha conta</a>
+                        <a href="#">Meus Pedidos</a>
+                    </div>
+                </div>
+            </div>
+            <a href="/Favoritos" class="px-4 a-hover">
+                <i class="fas fa-heart"></i>
+                <span class="badge badge-pill badge-dark position-absolute"
+                      style="top: 20px; right: 90px;"
+                      id="#badgeFavoritos"></span>
+            </a>
+            <a href="/Carrinho" class="px-4 a-hover">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="badge badge-pill badge-dark position-absolute" 
+                      style="top: 20px; right: 25px;"
+                      id="#badgeCarrinho"></span>
+            </a>
+        </div>
+    </header>
+    <main id="#main">
+        @RenderBody()
+    </main>
+
+    <footer class="d-flex flex-column w-100 px-5">
+        <div class="d-flex justify-content-around mx-4 mb-2">
+            <div class="wb-100 mx-1">
+                <h5>Institucional</h5>
+                <ul class="list-style-none pt-1">
+                    <li class="py-2"><a href="#" class="f-color-gray">Sobre Nós</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Garantia Estendida</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Política de privacidade</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Assessoria de Imprensa</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Trabalhe Conosco</a></li>
+                </ul>
+            </div>
+            <div class="wb-100 mx-1">
+                <h5>Dúvidas</h5>
+                <ul class="list-style-none pt-1">
+                    <li class="py-2"><a href="#" class="f-color-gray">Atendimento</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Trocas e Devoluções</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Políticas de Entrega</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Termos de condição de compra e venda</a></li>
+                </ul>
+            </div>
+            <div class="wb-100 mx-1">
+                <h5>Cartão</h5>
+                <ul class="list-style-none pt-1">
+                    <li class="py-2"><a href="#" class="f-color-gray">Peça seu cartão Dice</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Benefícios</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Limite</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Guia de Segurança</a></li>
+                </ul>
+            </div>
+            <div class="wb-100 mx-1">
+                <h5>Prime</h5>
+                <ul class="list-style-none pt-1">
+                    <li class="py-2"><a href="#" class="f-color-gray">Seja Prime</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Produtos Prime</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Dúvidas</a></li>
+                    <li class="py-2"><a href="#" class="f-color-gray">Termos e condições</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-between b-gray">
+            <div class="d-flex align-items-center px-2">
+                <div class="d-flex align-items-center h5">
+                    <i class="fas fa-dice"></i>
+                    <div class="f-quicksand-sans-serif content pt-1"></div>
+                </div>
+                <div class="f-color-gray f-10 pb-1 pl-2">Sua brincadeira começa aqui</div>
+            </div>
+            <div class="d-flex f-20 flex-column flex-md-row">
+                <!--REDES SOCIAIS-->
+                <a href="#" class="px-3 f-color-black"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="px-3 f-color-black"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="px-3 f-color-black"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="px-3 f-color-black"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="f-12 align-self-center my-3 f-color-gray-2">
+            MBSJ - Desenvolvedor / CNPJ: 99.999.999/9999-99 / Inscrição Estadual: 999.999.999.99 / Endereço: Rua das Palmeiras, 102 - São Paulo, SP - 99999-999 / atendimento@dice.com.br
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("js", false)
+</body>

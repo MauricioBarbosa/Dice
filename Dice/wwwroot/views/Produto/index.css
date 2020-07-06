@@ -1,0 +1,47 @@
+﻿#main{
+    background-color: #ffffff;
+}
+
+.img-produto-topo{
+    width: 32%;
+    height: 20vh;
+}
+
+.img-principal{
+    height: 380px;
+    width: 300px;
+}
+
+.carrousel-item{
+    background: none; 
+    border: none;
+}
+
+.carrousel-item:active{
+    border: none;
+}
+
+.img-miniatura{
+    height: 60px; 
+    width: 50px;
+    border: 1px solid #808080;
+}
+
+.img-miniatura:hover {
+    -webkit-box-shadow: 0px 0px 8px 5px rgba(214,98,36,1);
+    -moz-box-shadow: 0px 0px 8px 5px rgba(214,98,36,1);
+    box-shadow: 0px 0px 8px 5px rgba(214,98,36,1);
+    cursor: pointer;
+    height: 90px;
+    width: 70px;
+    z-index: 1;
+    transform: scale(1.1)
+}
+
+.img-miniatura:active{
+    transform: scale(0.95);
+}
+
+.carrousel-imagem{
+
+}
